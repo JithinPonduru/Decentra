@@ -11,6 +11,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily:{
+        'Barlow' : ['Barlow', 'sans-serif'],  
+        'Playfair': ['Playfair Display', 'serif'],
+        'Ubuntu': ['Ubuntu', 'sans-serif'],
+      },
+      
     },
   },
   plugins: [],
