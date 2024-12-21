@@ -12,7 +12,7 @@ const Services = () => {
 
   return (
     <div className="m-6 sm:m-10 lg:m-[7vh]">
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-Ubuntu font-semibold p-4 sm:p-6 text-gray-800 text-center">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-Ubuntu font-semibold p-4 sm:p-6 text-gray-800">
         SERVICES
       </h1>
 

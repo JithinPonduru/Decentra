@@ -3,6 +3,7 @@ import Services from "./Services";
 import ViewPage from "./ViewPage";
 import EventShedule from "./EventShedule";
 import ContactPage from "./ContactPage";
+import Fotter from "./Fotter";
 export default function LandingPage() {
   return (
     <div>
@@ -10,6 +11,7 @@ export default function LandingPage() {
       <Services />
       <EventShedule /> 
       <ContactPage />
+      <Fotter />
     </div>
   );
 }
