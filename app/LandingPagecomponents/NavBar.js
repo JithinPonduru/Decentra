@@ -87,7 +87,7 @@ const NavBar = () => {
           {/* Button in line with nav items */}
           <li className="md:flex md:items-center flex justify-center w-full md:w-auto mt-2 md:mt-0">
             <a
-              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-indigo-500 hover:border-transparent rounded md:ml-4"
+              className="bg-transparent hover:bg-blue-700 font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded md:ml-4"
               href="#"
             >
               Log In
