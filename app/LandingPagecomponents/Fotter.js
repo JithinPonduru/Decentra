@@ -33,10 +33,10 @@ const Footer = () => {
         {
             title: "Quick Links",
             details: [
-                <a href="/home"  rel="noopener noreferrer">Home</a>,
-                <a href="/about"  rel="noopener noreferrer">About Us</a>,
-                <a href="/contact"  rel="noopener noreferrer">Contact</a>,
-                <a href="/privacy-policy"  rel="noopener noreferrer">Privacy Policy</a>
+                <a href="/home" rel="noopener noreferrer">Home</a>,
+                <a href="/about" rel="noopener noreferrer">About Us</a>,
+                <a href="/contact" rel="noopener noreferrer">Contact</a>,
+                <a href="/privacy-policy" rel="noopener noreferrer">Privacy Policy</a>
             ]
         }
     ];
@@ -89,21 +89,21 @@ const Footer = () => {
 
                 {/* Quick Links Section */}
                 <div className="flex flex-wrap justify-between ">
-                <div className="w-full md:w-1/3 p-12 border-r-[1px] border-black">
-    <h2 className="font-semibold text-lg text-gray-700">Quick Links</h2>
-    <ul className="mt-2 space-y-2">
-        {footerData[3].details.map((link, index) => (
-            <li key={index} className="flex items-center text-gray-600">
-                {/* Choose appropriate icons for each link */}
-                {index === 0 && <FaHome className="mr-2" />} 
-                {index === 1 && <FaInfoCircle className="mr-2" />}
-                {index === 2 && <FaEnvelope className="mr-2" />}
-                {index === 3 && <FaShieldAlt className="mr-2" />}
-                {link}
-            </li>
-        ))}
-    </ul>
-</div>
+                    <div className="w-full md:w-1/3 p-12 border-r-[1px] border-black">
+                        <h2 className="font-semibold text-lg text-gray-700">Quick Links</h2>
+                        <ul className="mt-2 space-y-2">
+                            {footerData[3].details.map((link, index) => (
+                                <li key={index} className="flex items-center text-gray-600">
+                                    {/* Choose appropriate icons for each link */}
+                                    {index === 0 && <FaHome className="mr-2" />}
+                                    {index === 1 && <FaInfoCircle className="mr-2" />}
+                                    {index === 2 && <FaEnvelope className="mr-2" />}
+                                    {index === 3 && <FaShieldAlt className="mr-2" />}
+                                    {link}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
                     {/* Subscribe Section */}
                     <div className="w-full md:w-2/3 mb-4 p-4">
@@ -115,7 +115,7 @@ const Footer = () => {
                                 placeholder="Your email address"
                             />
                         </div>
-                        <button className="mt-4 w-full p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none">
+                        <button className="mt-4 w-full p-3 border-[1px] border-black rounded-sm hover:bg-gray-300 focus:outline-none">
                             Subscribe
                         </button>
                     </div>
