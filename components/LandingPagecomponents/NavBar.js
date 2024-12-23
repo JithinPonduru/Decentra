@@ -2,13 +2,14 @@
 
 import React, { useState } from "react";
 
-const NavBar = () => {
+const NavBar = ({ index }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navBarElements = [
-    "Apply for new Passport",
-    "Check Appointment Availability",
-    "Track Application Status",
+    { name: "Apply for new Passport", href: "/applicationPage" },
+    { name: "Check Appointment Availability", href: "/appointmentPage" },
+    { name: "Track Application Status", href: "/trackApplicationPage" },
   ];
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -16,7 +17,7 @@ const NavBar = () => {
   return (
     <nav className="lg:px-5 px-4 bg-white flex flex-wrap items-center py-2 border-b-[1px] border-black">
       <div className="flex-1 flex justify-between items-center">
-        <a href="#" className="text-xl font-semibold text-gray-900">
+        <a href="/" className="text-xl font-semibold text-gray-900">
           Decentra
         </a>
       </div>
@@ -25,6 +26,8 @@ const NavBar = () => {
       <button
         onClick={toggleMenu}
         className="md:hidden block focus:outline-none"
+        aria-expanded={isMenuOpen}
+        aria-label="Toggle navigation menu"
       >
         {isMenuOpen ? (
           <svg
@@ -67,20 +70,26 @@ const NavBar = () => {
         id="menu"
       >
         <ul className="md:flex items-center justify-start text-base text-gray-700 pt-2 md:pt-0 w-full">
-          {navBarElements.map((element, index) => (
+          {navBarElements.map((element, idx) => (
             <li
-              key={index}
+              key={idx}
               className={`${
                 isMenuOpen
                   ? "border-[1px] border-gray-800 m-2 shadow-md"
                   : "border-r-[1px] border-gray-800"
-              } flex justify-center items-center text-center ${index === 0 ? "border-l-[1px] border-gray-800" :""}`} // Ensure items and text are centered
+              } flex justify-center items-center text-center ${
+                idx === 0 ? "border-l-[1px] border-gray-800" : ""
+              }
+              
+              `}
             >
               <a
-                className="block py-3 px-4 hover:text-blue-700" // Ensure padding and hover effect are applied
-                href="#"
+                className={`block py-3 px-4 hover:text-blue-700 ${
+                  index === idx ? "text-blue-700 underline-offset-[5px] underline" : ""
+                }`}
+                href={element.href}
               >
-                {element}
+                {element.name}
               </a>
             </li>
           ))}
@@ -88,7 +97,7 @@ const NavBar = () => {
           <li className="md:flex md:items-center flex justify-center w-full md:w-auto mt-2 md:mt-0">
             <a
               className="bg-transparent hover:bg-blue-700 font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded md:ml-4"
-              href="#"
+              href="/login"
             >
               Log In
             </a>

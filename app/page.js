@@ -1,8 +1,12 @@
-import LandingPage from "./LandingPagecomponents/LandingPage";
+import LandingPage from "@/components/LandingPagecomponents/LandingPage";
+import NavBar from "@/components/LandingPagecomponents/NavBar";
 
 export default function Home() {
 
   return (
-   <LandingPage />
+    <div>
+      <NavBar index={undefined} />
+      <LandingPage />
+    </div>
   );
 }
