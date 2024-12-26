@@ -1,5 +1,5 @@
 {
-  "name": "temp",
+  "name": "decentra",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,6 +13,7 @@
     "next": "15.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
     "react-multi-carousel": "^2.8.5",
     "react-responsive-carousel": "^3.2.23"
   },
