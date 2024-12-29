@@ -9,6 +9,7 @@ const InputField = ({
     value,
     onChange,
     id,
+    autoComplete,
 }) => (
     <div>
         <label htmlFor={id} className="flex items-center space-x-1">
@@ -33,6 +34,7 @@ const InputField = ({
                     onChange={onChange}
                     required={required}
                     className="hidden"
+                    autoComplete={autoComplete} 
                 />
                 <label
                     htmlFor={id}
@@ -54,6 +56,7 @@ const InputField = ({
                 value={value}
                 onChange={onChange}
                 required={required} // Add required prop to input
+                autoComplete={autoComplete} 
                 className={`border-b-[1px] border-black mb-4 focus:outline-none w-full ${className}`}
             />
         )}
