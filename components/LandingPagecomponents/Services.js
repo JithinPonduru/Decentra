@@ -1,5 +1,4 @@
 import React from "react";
-
 const Services = () => {
   const services = [
     { name: "New Passport Application", href: "/applicationPage" ,buttonLabels : "Apply Now"},
@@ -15,7 +14,7 @@ const Services = () => {
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-Ubuntu font-semibold p-4 sm:p-6 text-gray-800 text-center">
         SERVICES
       </h1>
-
+      <button id="connectButton">Connect to MetaMask</button>
       <div className="space-y-6">
         {services.map((service, index) => (
           <div

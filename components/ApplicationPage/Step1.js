@@ -38,48 +38,90 @@ const Form = ({ formData, handleInputChange, handleSubmit }) => {
     ];
 
     return (
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {fields.map(({ id, label, type, options }) => (
-                <div key={id} className="flex flex-col space-y-2">
-                    <label htmlFor={id} className="text-lg font-medium text-gray-700">
-                        {label}
-                    </label>
-                    {type === 'radio' ? (
-                        <div className="flex flex-wrap gap-4">
-                            {options.map((option) => (
-                                <label key={`${id}-${option}`} className="flex items-center gap-2">
-                                    <InputField
-                                        type={type}
-                                        id={`${id}-${option}`}
-                                        name={id}
-                                        value={option}
-                                        checked={formData[id] === option}
-                                        onChange={handleInputChange}
-                                    />
-                                    <span className="text-gray-600">{option}</span>
-                                </label>
-                            ))}
-                        </div>
-                    ) : (
-                        <InputField
-                            id={id}
-                            type={type}
-                            name={id}
-                            value={formData[id]}
-                            onChange={handleInputChange}
-                        />
-                    )}
-                </div>
-            ))}
-            <div className="w-full md:w-full mt-6">
-                <button
-                    type="submit"
-                    className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg"
-                >
-                    Next Page
-                </button>
+        <form 
+        onSubmit={handleSubmit} 
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 text-black"
+    >
+        {fields.map(({ id, label, type, options }) => (
+            <div 
+                key={id} 
+                className={`flex flex-col space-y-3 ${id === 'passportType' ? 'md:col-span-2 w-full' : ''}`}
+            >
+                <label htmlFor={id} className="text-lg font-semibold text-gray-800">
+                    {label}
+                </label>
+    
+                {/* Full-Width Passport Type Selection */}
+                {type === 'radio' && id === 'passportType' ? (
+                    <div className="flex flex-col gap-3 w-full">
+                        {options.map((option) => (
+                            <label 
+                                key={`${id}-${option}`} 
+                                className="relative w-full cursor-pointer"
+                            >
+                                <input
+                                    type="radio"
+                                    id={`${id}-${option}`}
+                                    name={id}
+                                    value={option}
+                                    checked={formData[id] === option}
+                                    onChange={handleInputChange}
+                                    className="hidden peer"
+                                />
+                                <span className="block w-full px-5 py-3 text-black bg-gray-200 border border-gray-400 rounded-lg text-center cursor-pointer transition-all duration-300 peer-checked:bg-black peer-checked:text-white peer-checked:border-black hover:bg-gray-300">
+                                    {option}
+                                </span>
+                            </label>
+                        ))}
+                    </div>
+                ) : type === 'radio' ? (
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full">
+                        {options.map((option) => (
+                            <label 
+                                key={`${id}-${option}`} 
+                                className="relative w-full cursor-pointer"
+                            >
+                                <input
+                                    type="radio"
+                                    id={`${id}-${option}`}
+                                    name={id}
+                                    value={option}
+                                    checked={formData[id] === option}
+                                    onChange={handleInputChange}
+                                    className="hidden peer"
+                                />
+                                <span className="block w-full px-4 py-3 text-black  border border-gray-400 rounded-lg text-center cursor-pointer transition-all duration-300  peer-checked:bg-gray-400 peer-checked:text-black peer-checked:border-gray-400  hover:bg-gray-300">
+                                    {option}
+                                </span>
+                            </label>
+                        ))}
+                    </div>
+                ) : (
+                    <InputField
+                        id={id}
+                        type={type}
+                        name={id}
+                        value={formData[id]}
+                        onChange={handleInputChange}
+                        className="w-full p-3  text-black border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+                        autoComplete="off"
+
+                    />
+                )}
             </div>
-        </form>
+        ))}
+    
+        {/* Submit Button */}
+        <div className="col-span-1 md:col-span-2 mt-6">
+            <button
+                type="submit"
+                className="w-full bg-black text-white px-5 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300"
+            >
+                Next Page
+            </button>
+        </div>
+    </form>
+    
     );
 };
 
